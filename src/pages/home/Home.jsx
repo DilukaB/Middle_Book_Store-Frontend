@@ -3,6 +3,7 @@ import Banner from './Banner'
 import TopSellers from './TopSellers'
 import Recommended from './Recommended'
 import Feedback from './Feedback'
+import FeedbackForm from './FeedbackForm'
 
 
 
@@ -16,9 +17,12 @@ const Home = () => {
             <br /><br /><br />
             <Recommended />
             <br /><br /><br />
-
-
             <Feedback />
+            <br /><br /><br />
+            <FeedbackForm />
+
+
+
 
 
         </>

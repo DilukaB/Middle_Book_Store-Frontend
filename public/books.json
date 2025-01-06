@@ -7,7 +7,9 @@
         "trending": true,
         "coverImage": "book-1.jpg",
         "oldPrice": 29.99,
-        "newPrice": 19.99
+        "newPrice": 19.99,
+        "author": "Daniel Kahneman",
+        "publicationDate": "2011-10-25"
     },
     {
         "_id": 2,
@@ -17,7 +19,9 @@
         "trending": true,
         "coverImage": "book-2.jpg",
         "oldPrice": 24.99,
-        "newPrice": 14.99
+        "newPrice": 14.99,
+        "author": "F. Scott Fitzgerald",
+        "publicationDate": "1925-04-10"
     },
     {
         "_id": 3,
@@ -27,7 +31,9 @@
         "trending": true,
         "coverImage": "book-3.jpg",
         "oldPrice": 39.99,
-        "newPrice": 29.99
+        "newPrice": 29.99,
+        "author": "Robert B. Cialdini",
+        "publicationDate": "1984-07-01"
     },
     {
         "_id": 4,
@@ -37,7 +43,9 @@
         "trending": false,
         "coverImage": "book-4.jpg",
         "oldPrice": 49.99,
-        "newPrice": 39.99
+        "newPrice": 39.99,
+        "author": "George Orwell",
+        "publicationDate": "1949-06-08"
     },
     {
         "_id": 5,
@@ -47,7 +55,9 @@
         "trending": true,
         "coverImage": "book-5.jpg",
         "oldPrice": 19.99,
-        "newPrice": 9.99
+        "newPrice": 9.99,
+        "author": "Yuval Noah Harari",
+        "publicationDate": "2011-01-01"
     },
     {
         "_id": 6,
@@ -57,7 +67,9 @@
         "trending": false,
         "coverImage": "book-6.jpg",
         "oldPrice": 44.99,
-        "newPrice": 34.99
+        "newPrice": 34.99,
+        "author": "Stephen King",
+        "publicationDate": "1977-01-28"
     },
     {
         "_id": 7,
@@ -67,7 +79,9 @@
         "trending": true,
         "coverImage": "book-7.jpg",
         "oldPrice": 59.99,
-        "newPrice": 49.99
+        "newPrice": 49.99,
+        "author": "Bram Stoker",
+        "publicationDate": "1897-05-26"
     },
     {
         "_id": 8,
@@ -77,7 +91,9 @@
         "trending": true,
         "coverImage": "book-8.jpg",
         "oldPrice": 21.99,
-        "newPrice": 16.99
+        "newPrice": 16.99,
+        "author": "Herman Melville",
+        "publicationDate": "1851-10-18"
     },
     {
         "_id": 9,
@@ -87,7 +103,9 @@
         "trending": false,
         "coverImage": "book-9.jpg",
         "oldPrice": 27.99,
-        "newPrice": 18.99
+        "newPrice": 18.99,
+        "author": "Mark Twain",
+        "publicationDate": "1884-12-10"
     },
     {
         "_id": 10,
@@ -97,17 +115,21 @@
         "trending": true,
         "coverImage": "book-10.jpg",
         "oldPrice": 14.99,
-        "newPrice": 10.99
+        "newPrice": 10.99,
+        "author": "Jane Austen",
+        "publicationDate": "1813-01-28"
     },
     {
         "_id": 11,
         "title": "The Art of War",
-        "description": "A classic work on military strategy and tactics .",
+        "description": "A classic work on military strategy and tactics.",
         "category": "business",
         "trending": true,
         "coverImage": "book-11.jpg",
         "oldPrice": 32.99,
-        "newPrice": 25.99
+        "newPrice": 25.99,
+        "author": "Sun Tzu",
+        "publicationDate": "unknown"
     },
     {
         "_id": 12,
@@ -117,7 +139,9 @@
         "trending": true,
         "coverImage": "book-12.jpg",
         "oldPrice": 19.99,
-        "newPrice": 9.99
+        "newPrice": 9.99,
+        "author": "H.P. Lovecraft",
+        "publicationDate": "1928-01-01"
     },
     {
         "_id": 13,
@@ -127,7 +151,9 @@
         "trending": true,
         "coverImage": "book-13.jpg",
         "oldPrice": 26.99,
-        "newPrice": 21.99
+        "newPrice": 21.99,
+        "author": "Cormac McCarthy",
+        "publicationDate": "2006-09-26"
     },
     {
         "_id": 14,
@@ -137,7 +163,9 @@
         "trending": false,
         "coverImage": "book-14.jpg",
         "oldPrice": 34.99,
-        "newPrice": 24.99
+        "newPrice": 24.99,
+        "author": "Jules Verne",
+        "publicationDate": "1864-01-01"
     },
     {
         "_id": 15,
@@ -147,7 +175,9 @@
         "trending": false,
         "coverImage": "book-15.jpg",
         "oldPrice": 22.99,
-        "newPrice": 12.99
+        "newPrice": 12.99,
+        "author": "Alexandre Dumas",
+        "publicationDate": "1844-01-01"
     },
     {
         "_id": 16,
@@ -157,7 +187,9 @@
         "trending": false,
         "coverImage": "book-16.jpg",
         "oldPrice": 24.99,
-        "newPrice": 19.99
+        "newPrice": 19.99,
+        "author": "Robert Louis Stevenson",
+        "publicationDate": "1883-01-01"
     },
     {
         "_id": 17,
@@ -167,7 +199,9 @@
         "trending": true,
         "coverImage": "book-17.jpg",
         "oldPrice": 49.99,
-        "newPrice": 39.99
+        "newPrice": 39.99,
+        "author": "Mary Shelley",
+        "publicationDate": "1818-01-01"
     },
     {
         "_id": 18,
@@ -177,7 +211,9 @@
         "trending": true,
         "coverImage": "book-18.jpg",
         "oldPrice": 18.99,
-        "newPrice": 12.99
+        "newPrice": 12.99,
+        "author": "John Soforic",
+        "publicationDate": "2014-01-01"
     },
     {
         "_id": 19,
@@ -187,7 +223,9 @@
         "trending": true,
         "coverImage": "book-19.jpg",
         "oldPrice": 35.99,
-        "newPrice": 27.99
+        "newPrice": 27.99,
+        "author": "Homer",
+        "publicationDate": "unknown"
     },
     {
         "_id": 20,
@@ -197,6 +235,8 @@
         "trending": false,
         "coverImage": "book-20.jpg",
         "oldPrice": 24.99,
-        "newPrice": 14.99
+        "newPrice": 14.99,
+        "author": "Charles Duhigg",
+        "publicationDate": "2012-02-28"
     }
 ]

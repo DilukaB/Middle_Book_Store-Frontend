@@ -39,10 +39,10 @@ const TopSellers = () => {
             </h2>
 
             {/* Category Selector */}
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center mb-6">
                 <select
                     onChange={(e) => setSelectedCategory(e.target.value)}
-                    className="border border-gray-300 bg-gradient-to-r from-gray-100 to-gray-50 rounded-full px-8 py-4 text-gray-800 text-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm transition duration-200"
+                    className="border border-gray-300 bg-gradient-to-r from-gray-100 to-gray-50  px-5 py-4 text-gray-800 text-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 shadow-sm transition duration-200"
                 >
                     {categories.map((category, index) => (
                         <option key={index} value={category}>

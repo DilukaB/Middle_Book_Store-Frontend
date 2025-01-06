@@ -10,8 +10,8 @@ const Footer = () => {
         <footer className="bg-gray-700 text-white py-6">
             <div className="container mx-auto px-8 text-center">
                 {/* Company Info */}
-                <p className="text-lg font-semibold">BookStore</p>
-                <p className="text-sm mt-8 mb-10">
+                <p className="text-3xl font-semibold">BookStore</p>
+                <p className="text-lg mt-8 mb-10">
                     Your favorite place to find amazing books. Discover, read, and explore with us.
                 </p>
 

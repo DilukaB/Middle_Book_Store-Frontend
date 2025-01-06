@@ -11,7 +11,6 @@ const CheckoutPage = () => {
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
     } = useForm();
     const [isChecked, setIsChecked] = useState(false);
@@ -34,12 +33,11 @@ const CheckoutPage = () => {
 
         try {
             if (cartItems.length > 0) {
-                // Simulate API call for order placement
                 setTimeout(() => {
-                    setOrderPlaced(true); // Show success message
-                }, 1000); // Simulating delay
+                    setOrderPlaced(true);
+                }, 1000);
             } else {
-                setOrderPlaced(false); // Show failure message
+                setOrderPlaced(false);
             }
         } catch (error) {
             console.error("Error placing an order", error);
@@ -48,170 +46,115 @@ const CheckoutPage = () => {
     };
 
     return (
-        <section>
-            <div className="min-h-screen p-6 bg-gray-100 flex items-center justify-center">
-                <div className="container max-w-screen-lg mx-auto">
-                    <div className="bg-white rounded-lg shadow-lg p-8">
-                        <h2 className="text-2xl font-semibold text-gray-800 mb-4">Checkout - Cash On Delivery</h2>
-                        <p className="text-gray-600 mb-6">Total Price: ${totalPrice}</p>
-                        <p className="text-gray-600 mb-8">Items: {cartItems.length > 0 ? cartItems.length : 0}</p>
+        <section className="min-h-screen bg-gradient-to-r from-purple-50 via-pink-100 to-blue-50 flex items-center justify-center p-6">
+            <div className="container max-w-4xl mx-auto">
+                <div className="bg-white shadow-lg rounded-lg p-8">
+                    <h2 className="text-3xl font-bold text-blue-600 mb-4">Checkout - Cash On Delivery</h2>
+                    <p className="text-gray-700 text-lg mb-2">Total Price: <span className="font-semibold text-green-600">${totalPrice}</span></p>
+                    <p className="text-gray-700 text-lg mb-6">Items: <span className="font-semibold">{cartItems.length > 0 ? cartItems.length : 0}</span></p>
 
-                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                            <div className="space-y-4">
-                                <div>
-                                    <label htmlFor="name" className="block text-gray-700 font-medium">Full Name</label>
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        id="name"
-                                        className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        placeholder="John Doe"
-                                        {...register("name", { required: "Name is required" })}
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="email" className="block text-gray-700 font-medium">Email Address</label>
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        id="email"
-                                        className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        disabled
-                                        defaultValue={currentUser?.email}
-                                        placeholder="email@domain.com"
-                                    />
-                                </div>
-
-                                <div>
-                                    <label htmlFor="phone" className="block text-gray-700 font-medium">Phone Number</label>
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        id="phone"
-                                        className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        placeholder="+123 456 7890"
-                                    />
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label htmlFor="address" className="block text-gray-700 font-medium">Address / Street</label>
-                                        <input
-                                            type="text"
-                                            name="address"
-                                            id="address"
-                                            className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            placeholder="123 Main St"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="city" className="block text-gray-700 font-medium">City</label>
-                                        <input
-                                            type="text"
-                                            name="city"
-                                            id="city"
-                                            className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            placeholder="New York"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div>
-                                        <label htmlFor="country" className="block text-gray-700 font-medium">Country / Region</label>
-                                        <input
-                                            type="text"
-                                            name="country"
-                                            id="country"
-                                            className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            placeholder="United States"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label htmlFor="state" className="block text-gray-700 font-medium">State / Province</label>
-                                        <input
-                                            type="text"
-                                            name="state"
-                                            id="state"
-                                            className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                            placeholder="New York"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div>
-                                    <label htmlFor="zipcode" className="block text-gray-700 font-medium">Zipcode</label>
-                                    <input
-                                        type="text"
-                                        name="zipcode"
-                                        id="zipcode"
-                                        className="w-full border border-gray-300 rounded-lg p-4 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                        placeholder="10001"
-                                    />
-                                </div>
-
-                                <div className="flex items-center space-x-2">
-                                    <input
-                                        type="checkbox"
-                                        name="billing_same"
-                                        id="billing_same"
-                                        className="form-checkbox text-blue-600 focus:ring-2 focus:ring-blue-500"
-                                        onChange={() => setIsChecked(!isChecked)}
-                                    />
-                                    <label htmlFor="billing_same" className="text-gray-700">
-                                        I agree to the{' '}
-                                        <Link to="/terms" className="text-blue-600 underline">Terms & Conditions</Link> and{' '}
-                                        <Link to="/policy" className="text-blue-600 underline">Shopping Policy</Link>.
-                                    </label>
-                                </div>
-
-                                <div className="text-right">
-                                    <button
-                                        disabled={!isChecked}
-                                        className={`${!isChecked ? 'opacity-50 cursor-not-allowed' : ''
-                                            } bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg`}
-                                    >
-                                        Place an Order
-                                    </button>
-                                </div>
+                    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label htmlFor="name" className="block text-gray-600 font-medium">Full Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all"
+                                    placeholder="John Doe"
+                                    {...register("name", { required: "Name is required" })}
+                                />
+                                {errors.name && <p className="text-red-500 text-sm">{errors.name.message}</p>}
                             </div>
-                        </form>
-
-                        {cartItems.length > 0 ? (
-                            orderPlaced && (
-                                <div className="mt-6 p-6 bg-green-100 rounded-lg shadow-md">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="flex-shrink-0">
-                                            <svg className="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p className="text-lg font-medium text-green-800">Order Placed Successfully!</p>
-                                            <p className="text-gray-600">Thank you for your purchase. You will receive a confirmation email shortly.</p>
-                                            <Link to="/" className="mt-4 inline-block text-blue-600 underline">Back to Home</Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            )
-                        ) : (
-                            <div className="mt-6 p-6 bg-red-100 rounded-lg shadow-md">
-                                <div className="flex items-center space-x-4">
-                                    <div className="flex-shrink-0">
-                                        <svg className="w-12 h-12 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 12h-6m-4 0h-6m4 0a2 2 0 100 4h2a2 2 0 100-4m6-6h-6m-4 0h-6m4 0a2 2 0 100 4h2a2 2 0 100-4" />
-                                        </svg>
-                                    </div>
-                                    <div>
-                                        <p className="text-lg font-medium text-red-800">Order Failed!</p>
-                                        <p className="text-gray-600">Your cart is empty. Please add items to your cart to proceed with the order.</p>
-                                        <Link to="/" className="mt-4 inline-block text-blue-600 underline">Back to Home</Link>
-                                    </div>
-                                </div>
+                            <div>
+                                <label htmlFor="email" className="block text-gray-600 font-medium">Email Address</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    className="w-full border border-gray-300 rounded-lg p-3 bg-gray-100 focus:outline-none"
+                                    disabled
+                                    defaultValue={currentUser?.email}
+                                />
                             </div>
-                        )}
-                    </div>
+                        </div>
+
+                        <div>
+                            <label htmlFor="phone" className="block text-gray-600 font-medium">Phone Number</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all"
+                                placeholder="+123 456 7890"
+                                {...register("phone", { required: "Phone number is required" })}
+                            />
+                            {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message}</p>}
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label htmlFor="city" className="block text-gray-600 font-medium">City</label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all"
+                                    placeholder="New York"
+                                    {...register("city", { required: "City is required" })}
+                                />
+                                {errors.city && <p className="text-red-500 text-sm">{errors.city.message}</p>}
+                            </div>
+                            <div>
+                                <label htmlFor="country" className="block text-gray-600 font-medium">Country / Region</label>
+                                <input
+                                    type="text"
+                                    id="country"
+                                    className="w-full border border-gray-300 rounded-lg p-3 focus:ring-2 focus:ring-indigo-600 focus:outline-none transition-all"
+                                    placeholder="United States"
+                                    {...register("country", { required: "Country is required" })}
+                                />
+                                {errors.country && <p className="text-red-500 text-sm">{errors.country.message}</p>}
+                            </div>
+                        </div>
+
+                        <div className="flex items-center space-x-2">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                className="form-checkbox text-indigo-600 focus:ring-2 focus:ring-indigo-600"
+                                onChange={() => setIsChecked(!isChecked)}
+                            />
+                            <label htmlFor="terms" className="text-gray-700">
+                                I agree to the <Link to="/terms" className="text-indigo-600 underline">Terms & Conditions</Link>.
+                            </label>
+                        </div>
+
+                        <div className="text-right">
+                            <button
+                                type="submit"
+                                disabled={!isChecked}
+                                className={`py-3 px-6 rounded-lg text-white font-bold ${!isChecked ? 'bg-gray-400 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700'}`}
+                            >
+                                Place Order
+                            </button>
+                        </div>
+                    </form>
+
+                    {orderPlaced && (
+                        <div className="mt-6 p-4 bg-green-100 rounded-lg text-green-700 flex items-center">
+                            <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span>Order Placed Successfully! Thank you for your purchase.</span>
+                        </div>
+                    )}
+
+                    {!orderPlaced && cartItems.length === 0 && (
+                        <div className="mt-6 p-4 bg-red-100 rounded-lg text-red-700 flex items-center">
+                            <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-6.364 6.364M6 6l6 6" />
+                            </svg>
+                            <span>Your cart is empty. Add items to proceed with the order.</span>
+                        </div>
+                    )}
                 </div>
             </div>
         </section>

@@ -43,7 +43,8 @@ const BookCard = ({ book }) => {
             <div className="flex justify-center items-center pt-6">
                 <button
                     onClick={() => handleAddToCart(book)}
-                    className="btn-primary px-6 space-x-1 flex items-center gap-1">
+                    className=' btn-primary px-10 space-x-1 flex items-center gap-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300
+'>
                     <FiShoppingCart />
                     <span>Add to Cart</span>
                 </button>

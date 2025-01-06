@@ -19,6 +19,7 @@ import AboutUs from "../pages/books/AboutUs";
 import Contact from "../pages/books/Contact";
 import Terms from "../pages/books/Terms";
 import Policy from "../pages/books/Policy";
+import BookDetails from "../pages/books/BookDetails";
 
 
 
@@ -72,8 +73,11 @@ const router = createBrowserRouter([
             {
                 path: "/policy",
                 element: <Policy />
-            }
-
+            },
+            {
+                path: "/book-details/:bookName",
+                element: <BookDetails />
+            },
 
         ]
 

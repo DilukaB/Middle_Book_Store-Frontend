@@ -1,87 +1,78 @@
-import React from 'react';
+import React from "react";
 
 const AboutUs = () => {
+    const staffMembers = [
+        {
+            name: "Alice Johnson",
+            avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+            title: "Manager",
+            email: "alice.johnson@mystore.com",
+        },
+        {
+            name: "John Smith",
+            avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+            title: "Assistant Manager",
+            email: "john.smith@mystore.com",
+        },
+        {
+            name: "Emily Brown",
+            avatar: "https://randomuser.me/api/portraits/women/47.jpg",
+            title: "Customer Support",
+            email: "emily.brown@mystore.com",
+        },
+        {
+            name: "Robert Davis",
+            avatar: "https://randomuser.me/api/portraits/men/33.jpg",
+            title: "Marketing Specialist",
+            email: "robert.davis@mystore.com",
+        },
+        {
+            name: "Michael Lee",
+            avatar: "https://randomuser.me/api/portraits/men/90.jpg",
+            title: "IT Specialist",
+            email: "michael.lee@mystore.com",
+        },
+    ];
+
     return (
-        <div className="bg-gray-50 py-16">
+        <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50 py-10">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className="text-center">
                     <h1 className="text-5xl font-extrabold text-gray-900 leading-tight tracking-tight">
                         About Us
                     </h1>
                     <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-                        Welcome to My Middle Book Store! We are dedicated to bringing knowledge and inspiring stories to life.
-                    </p>
-                    <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-                        Our mission is to offer a curated selection of high-quality books for readers of all ages. Founded with a deep love for literature, our store has become a cherished space for book enthusiasts in the community.
-                    </p>
-                    <p className="mt-6 text-lg text-gray-600 leading-relaxed">
-                        Whether you're seeking the latest bestseller or a timeless classic, we aim to provide something special for every reader. Our passionate team is here to help you discover your next great read.
+                        We are dedicated to bringing knowledge and inspiring stories to life. Our advanced Book Store System offers an easy-to-navigate platform where customers can explore a diverse collection of books across genres, check availability, and reserve their favorite titles online. With seamless integration of customer support and personalized recommendations, we aim to make your reading journey delightful and hassle-free.
                     </p>
                 </div>
 
-                {/* Achievements Section */}
+                {/* Staff Section */}
                 <div className="mt-12">
-                    <h2 className="text-4xl font-extrabold text-gray-900 mb-6">Our Achievements</h2>
-                    <ul className="space-y-4 text-lg text-gray-700">
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
+                    <h2 className="text-4xl font-extrabold text-gray-900 mb-6">Meet Our Staff</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                        {staffMembers.map((member, index) => (
+                            <div
+                                key={index}
+                                className="text-center bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out"
+                            >
+                                <img
+                                    src={member.avatar}
+                                    alt={member.name}
+                                    className="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-indigo-500"
+                                />
+                                <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
+                                <p className="text-sm text-gray-600">{member.title}</p>
+                                <p className="text-sm text-gray-500 mt-2">
+                                    <a
+                                        href={`mailto:${member.email}`}
+                                        className="text-indigo-600 hover:underline"
+                                    >
+                                        {member.email}
+                                    </a>
+                                </p>
                             </div>
-                            <p>Served over 10,000 satisfied customers, fostering a thriving community.</p>
-                        </li>
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
-                            </div>
-                            <p>Curated a collection of over 5,000 carefully selected books across genres.</p>
-                        </li>
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
-                            </div>
-                            <p>Organized numerous successful book reading events and interactive workshops.</p>
-                        </li>
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
-                            </div>
-                            <p>Built a strong and engaged online community through social media.</p>
-                        </li>
-                    </ul>
-                </div>
-
-                {/* Future Goals Section */}
-                <div className="mt-12">
-                    <h2 className="text-4xl font-extrabold text-gray-900 mb-6">What We Aim to Do</h2>
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                        At My Middle Book Store, we aspire to continue evolving and enhancing the reading experience for our customers. Our future goals include:
-                    </p>
-                    <ul className="space-y-4 text-lg text-gray-700 mt-4">
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
-                            </div>
-                            <p>Expand our collection to 10,000+ exclusive and rare titles.</p>
-                        </li>
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
-                            </div>
-                            <p>Host more interactive events, including author signings and book clubs.</p>
-                        </li>
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
-                            </div>
-                            <p>Enhance our online presence with a premium e-commerce platform.</p>
-                        </li>
-                        <li className="flex items-start space-x-4">
-                            <div className="flex-none w-6 h-6 mt-1">
-                                <i className="fas fa-check-circle text-blue-600 text-xl"></i>
-                            </div>
-                            <p>Offer personalized book recommendations tailored to your interests.</p>
-                        </li>
-                    </ul>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
